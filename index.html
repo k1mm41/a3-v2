@@ -4,16 +4,13 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Assignment 3 GBDA 228</title>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-* {box-sizing: border-box}
-/*tabs https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs*/
-/* Set height of body and the document to 100% */
-  /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar <-- for drop down menu*/
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
+/*drop down menu code:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar*/
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -43,40 +40,39 @@ body, html {
   font-family: inherit;
   margin: 0;
 }
-/* Style tab links */
-.tablink {
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
 }
 
-.tablink:hover {
-  background-color: #777;
-}
-
-/* Style the tab content (and add height:100% for full page content) */
-.tabcontent {
-  color: white;
+.dropdown-content {
   display: none;
-  padding: 100px 20px;
-  height: 100%;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-#Home {background-color: #1a0861;}
-#AboutMe {background-color: #1a0861;}
-#Art {background-color: #1a0861;}
-#Projects {background-color: #1a0861;}
 
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 </head>
-<body>
-  <body style="background-color:white;">
+<body style="background-color:white;">
 
 <div class="navbar">
   <a href="#home">Home</a>
@@ -93,51 +89,8 @@ body, html {
   </div> 
 </div>
 
-<button class="tablink" onclick="openPage('Home', this, '#1a0861')">Home</button>
-<button class="tablink" onclick="openPage('AboutMe', this, '#1a0861')" id="defaultOpen">AboutMe</button>
-<button class="tablink" onclick="openPage('Art', this, '#1a0861')">Art</button>
-<button class="tablink" onclick="openPage('Projects', this, '#1a0861')">Projects</button>
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
 
-<div id="Home" class="tabcontent">
-  <h3>Home</h3>
-  <p>Home is where the heart is..</p>
-</div>
-
-<div id="AboutMe" class="tabcontent">
-  <h3>AboutMe</h3>
-  <p>Some news this fine day!</p> 
-</div>
-
-<div id="Art" class="tabcontent">
-  <h3>Art</h3>
-  <p>Get in touch, or swing by for a cup of coffee.</p>
-</div>
-
-<div id="Projects" class="tabcontent">
-  <h3>Projects</h3>
-  <p>Who we are and what we do.</p>
-</div>
-
-<script>
-function openPage(pageName,elmnt,color) {
-  let i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-   
-  
-  
 </body>
-</html> 
+</html>
