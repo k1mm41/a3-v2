@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 3 GBDA 228</title>
+<style>
+* {box-sizing: border-box}
+/*tabs https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs*/
+/* Set height of body and the document to 100% */
+  /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar <-- for drop down menu*/
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: #1a0861;}
+#AboutMe {background-color: #1a0861;}
+#Art {background-color: #1a0861;}
+#Projects {background-color: #1a0861;}
+
+</style>
+</head>
+<body>
+  <body style="background-color:white;">
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+</div>
+
+<button class="tablink" onclick="openPage('Home', this, '#1a0861')">Home</button>
+<button class="tablink" onclick="openPage('AboutMe', this, '#1a0861')" id="defaultOpen">AboutMe</button>
+<button class="tablink" onclick="openPage('Art', this, '#1a0861')">Art</button>
+<button class="tablink" onclick="openPage('Projects', this, '#1a0861')">Projects</button>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="AboutMe" class="tabcontent">
+  <h3>AboutMe</h3>
+  <p>Some news this fine day!</p> 
+</div>
+
+<div id="Art" class="tabcontent">
+  <h3>Art</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="Projects" class="tabcontent">
+  <h3>Projects</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  let i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+  
+  
+</body>
+</html> 
